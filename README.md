@@ -125,3 +125,4 @@ npm run build              # compile
 npm run prisma:migrate     # dev migration
 npm run prisma:seed        # reseed plans + demo user
 ```
+Deployment configuration updated.
