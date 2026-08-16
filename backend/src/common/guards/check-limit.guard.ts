@@ -16,11 +16,18 @@ export class CheckLimitGuard implements CanActivate {
       context.getHandler(),
       context.getClass(),
     ]);
+
     if (!key) {
       return true;
     }
+
     const request = context.switchToHttp().getRequest();
-    await this.usageService.enforce(request.user.organizationId, key);
+
+    await this.usageService.enforce(
+      request.user.organizationId,
+      key,
+    );
+
     return true;
   }
 }
